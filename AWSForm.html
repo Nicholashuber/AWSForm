@@ -1,0 +1,37 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function(){
+   $("#submit").click(function(e) {
+                e.preventDefault();
+
+                var name = $("#name").val();
+                var phone = $("#phone").val();
+
+        $.ajax({type: "POST", url: 'https://vf8j7oo8s5.execute-api.us-east-1.amazonaws.com/Best', contentType: 'application/json', data: JSON.stringify({
+                        'name': name,
+                        'phone': phone
+                    }), success: function(result){
+            $('#form-response').text('Email was sent.');
+        },
+ error: function(){
+                        $('#form-response').text('Error.');
+                    }
+});
+    });
+});
+    </script>
+</head>
+<body>
+<form>
+    <label for="name">Name</label>
+    <input id="name">
+    <label for="phone">Phone</label>
+    <input id="phone">
+    <button id="submit">Submit</button>
+</form>
+<div id="form-response"></div>
+<div id="div1"></div>
+</body>
+</html>
