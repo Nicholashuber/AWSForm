@@ -9,7 +9,7 @@
                 var name = $("#name").val();
                 var phone = $("#phone").val();
 
-        $.ajax({type: "POST", url: 'https://vf8j7oo8s5.execute-api.us-east-1.amazonaws.com/Best', contentType: 'application/json', data: JSON.stringify({
+        $.ajax({type: "POST", url: 'http://vf8j7oo8s5.execute-api.us-east-1.amazonaws.com/Best', contentType: 'application/json', data: JSON.stringify({
                         'name': name,
                         'phone': phone
                     }), success: function(result){
